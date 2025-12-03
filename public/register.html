@@ -1,0 +1,44 @@
+<!-- public/register.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CampusConnect — Register</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body>
+  <div class="container card">
+    <div class="header"><div class="brand">CampusConnect</div><div class="tag">Create account</div></div>
+
+    <div style="max-width:700px">
+      <div class="form-row"><input id="name" class="input" placeholder="Full name"></div>
+      <div class="form-row"><input id="email" class="input" placeholder="College email"></div>
+      <div class="form-row"><input id="password" class="input" type="password" placeholder="Password (>=6)"></div>
+      <div class="form-row">
+        <input id="branch" class="input" placeholder="Branch (e.g., CS)">
+        <input id="roll" class="input" placeholder="Roll no.">
+      </div>
+
+      <div style="display:flex;gap:12px">
+        <button id="btnCreate" class="btn">Create Account</button>
+        <button id="btnBack" class="btn secondary">Back</button>
+      </div>
+      <p id="regmsg" class="small" style="margin-top:12px;color:var(--danger)"></p>
+    </div>
+  </div>
+
+  <script src="js/firebaseInit.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/register.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btnCreate').addEventListener('click', registerStudent);
+      document.getElementById('btnBack').addEventListener('click', ()=> location.href='index.html');
+    });
+  </script>
+</body>
+</html>

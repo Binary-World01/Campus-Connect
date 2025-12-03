@@ -1,0 +1,48 @@
+<!-- public/new-complaint.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CampusConnect — New Complaint</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body>
+  <div class="container card">
+    <div class="header"><div class="brand">CampusConnect</div><div class="tag">Submit Complaint</div></div>
+
+    <div style="max-width:740px">
+      <div class="form-row"><input id="title" class="input" placeholder="Short title"></div>
+      <div class="form-row">
+        <select id="category" class="input">
+          <option>Infrastructure</option>
+          <option>Faculty</option>
+          <option>Exam</option>
+          <option>Hostel</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><textarea id="description" class="input" placeholder="Describe the issue..."></textarea></div>
+
+      <div style="display:flex;gap:12px">
+        <button id="btnSubmit" class="btn">Submit</button>
+        <button id="btnBack" class="btn secondary">Back</button>
+      </div>
+      <p id="cmsg" class="small" style="margin-top:12px;color:var(--danger)"></p>
+    </div>
+  </div>
+
+  <script src="js/firebaseInit.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btnSubmit').addEventListener('click', submitComplaintFromUI);
+      document.getElementById('btnBack').addEventListener('click', ()=> location.href='dashboard.html');
+    });
+  </script>
+</body>
+</html>

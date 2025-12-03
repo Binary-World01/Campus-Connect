@@ -1,0 +1,53 @@
+<!-- public/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CampusConnect — Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-functions-compat.js"></script>
+</head>
+<body>
+  <div class="container card">
+    <div class="header">
+      <div>
+        <div class="brand">CampusConnect</div>
+        <div class="tag">Secure • Anonymous • Automated</div>
+      </div>
+    </div>
+
+    <h2>Sign in</h2>
+    <p class="small">Use your college email</p>
+
+    <div style="max-width:520px">
+      <div class="form-row">
+        <input id="email" class="input" placeholder="Email" />
+      </div>
+      <div class="form-row">
+        <input id="password" class="input" type="password" placeholder="Password" />
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button id="btnLogin" class="btn">Login</button>
+        <button id="btnGoRegister" class="btn secondary">Register</button>
+      </div>
+      <p id="msg" class="small" style="color:var(--danger);margin-top:10px"></p>
+    </div>
+  </div>
+
+  <!-- Our scripts -->
+  <script src="js/firebaseInit.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Wire buttons after scripts loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btnLogin').addEventListener('click', login);
+      document.getElementById('btnGoRegister').addEventListener('click', ()=> location.href='register.html');
+    });
+  </script>
+</body>
+</html>
