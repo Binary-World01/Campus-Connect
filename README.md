@@ -118,9 +118,9 @@ Login with admin credentials
 If local admin flag not set:
 
 Press F12 → Console → run:
-
+```
 localStorage.setItem('cc_admin_'+auth.currentUser.uid,'true');
-
+```
 
 Admin panel will unlock
 
